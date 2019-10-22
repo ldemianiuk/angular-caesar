@@ -1,0 +1,17 @@
+
+<div class="element">
+<div><label for="key">Key</label></div>
+<div><input id="key" [(ngModel)]="key" (input)="onKeyChange();"></div>
+</div>
+
+<div class="element">
+<div><label for="plaintext">Plaintext</label></div>
+<div><textarea id="plaintext" [(ngModel)]="plaintext" (input)="onPlaintextChange();"
+               rows="12" cols="80"> </textarea></div>
+</div>
+
+<div class="element">
+<div><label for="encrypted">Encrypted</label></div>
+<div><textarea id="encrypted" [(ngModel)]="encrypted" (input)="onEncryptedChange();"
+               rows="12" cols="80"> </textarea></div>
+</div>

@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {CaesarComponent} from './caesar/caesar.component';
+import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        CaesarComponent
       ],
+      imports: [
+        FormsModule
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +32,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-caesar app is running!');
+    const app = fixture.debugElement.componentInstance;
+    expect(compiled.querySelector('h1').textContent).toContain(app.title);
   });
 });
